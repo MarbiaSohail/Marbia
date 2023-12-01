@@ -1,4 +1,4 @@
-//import liraries
+//import libraries
 import React, { Component } from 'react';
 import {  StyleSheet, Text, View , Image, TextInput , Button,TouchableOpacity
 } from 'react-native';
@@ -39,7 +39,7 @@ const Home = (props  ) => {
      <TouchableOpacity
         style={styles.customButton}
         onPress={() => {
-            props.navigation.navigate("CV")
+            props.navigation.navigate("CvInput")
         }}
       >
         <Text style={styles.buttonText}>LOGIN</Text>
@@ -133,5 +133,5 @@ const styles = StyleSheet.create({
     },
   });
   
-//make this component available to the app
+  
 export default Home;

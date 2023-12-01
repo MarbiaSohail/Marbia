@@ -1,24 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { View, Text } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './home.js'
-import cv from './cv_page.js'
-import FontLoader from './FontLoader.js';
+import Registration from './Registration';
+import Home from './home';
+import CvInput from './CvInput';
+import CvPage from './CvPage';
+import FontLoader from './FontLoader';
 
 const Stack = createNativeStackNavigator();
 
-function App(  ){
+function App() {
   return (
-    <FontLoader><NavigationContainer>
-    <Stack.Navigator screenOptions ={{headerShown:false}}>
-      <Stack.Screen name="Home" component={Home}/>
-      <Stack.Screen name="CV" component={cv}/>
-    </Stack.Navigator>
-    
-  </NavigationContainer></FontLoader>
-    
-    
+    <FontLoader>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Registration" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Registration" component={Registration} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="CvInput" component={CvInput} />
+          <Stack.Screen name="CVPage" component={CvPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </FontLoader>
   );
 }
+
 export default App;
